@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+        function sendEmail() {
+            //var userValue = document.getElementByID("mailSubject").value
+            //var passValue = document.getElementByID("mailBody").value
+        
+            Email.send({
+                Host : "mail.bbsbys.com",
+                Username : "valeria.garcia@bbsbys.com",
+                Password : "V4l3ri4*GAc&88s#",
+                To : 'rafael.trejo@bbsbys.com',
+                From : "valeria.garcia@bbsbys.com",
+                Subject : "This is the subject",
+                Body : "And this is the body"
+            })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                });
+               
+        }
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                Subject:
+            </td>
+            <td>
+                <input type="text" id="mailSubject"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Body:
+            </td>
+            <td>
+                <input type="text" id="mailBody"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" onclick="sendEmail();" value="send the mail"/>
+            </td>
+        </tr>
+    </table>    
+</body>
+</html>
